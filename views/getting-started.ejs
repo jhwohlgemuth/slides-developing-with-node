@@ -1,0 +1,66 @@
+<section id="getting-started">
+    <section id="installation" data-markdown>
+        ## Getting Started
+
+        1. Navigate to [nodejs.org/en/download/](https://nodejs.org/en/download/)
+        2. Download version for your needs
+        3. Install
+    </section>
+    <section id="advice-1">
+        <h3>Advice #1</h3>
+        <blockquote>Use the "node version manager", <code>nvm</code></blockquote>
+        <p><a href="https://github.com/creationix/nvm#install-script">view install instructions</a></p>
+        <pre class="fragment"><code class="bash">
+    # Install latest version of node
+    nvm install node
+
+    # Use the latest version of node
+    nvm use node
+
+    # Make it the default version
+    nvm alias default node
+        </code></pre>
+    </section>
+    <section id="advice-2" data-markdown>
+        ### Advice #2
+        > Use Linux
+
+        - "Better" support for build tools and ecosystem
+        - No file path limit
+    </section>
+    <section id="advice-3">
+        <h3>Advice #3</h3>
+        <blockquote>Use Linux...seriously</blockquote>
+        <p>Install <a href="https://www.virtualbox.org/">virtualbox</a> & <a href="https://www.vagrantup.com/">vagrant</a></p>
+        <pre class="fragment"><code class="bash">
+    cd C:\Users\username
+    vagrant init jhwohlgemuth/env
+    vagrant up
+
+    # save state for later
+    vagrant suspend
+        </code></pre>
+    </section>
+    <section id="dangerous-to-go-alone" data-background="img/dangerous-to-go-alone.png">
+        <pre class="fragment"><code class="bash">
+    npm install --global --production windows-build-tools
+        </code></pre>
+    </section>
+    <section id="after-node-is-installed">
+        <h3>After Node is installed...</h3>
+        <pre><code class="bash">
+    # Check your versions
+    node -v
+    npm -v
+    npx -v
+
+    # Create a package.json file
+    npm init
+
+    # Install modules locally and globally, dev and prod
+    npm install some-module
+    npm install some-module --global
+    npm install some-module --save-dev
+        </code></pre>
+    </section>
+</section>

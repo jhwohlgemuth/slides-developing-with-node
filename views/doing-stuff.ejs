@@ -1,0 +1,46 @@
+<section id="doing-stuff">
+    <section id="running-node-code">
+        <h4>Suppose you have a package.json...</h4>
+        <pre><code class="json">
+    {
+        "devDependencies": {
+            "eslint": "^4.2.0",
+            "jest": "^20.0.4",
+            "watch": "^1.0.2"
+        },
+        "scripts": {
+            "lint": "eslint ./lib/*.js --fix",
+            "lint:watch": "watch 'npm run lint' ./lib",
+            "pretest": "npm run lint",
+            "test": "jest",
+            "test:watch": "npm test -- --watch"
+        }
+    }
+        </code></pre>
+    </section>
+    <section id="advice-4" data-background="img/using-ntl.png"></section>
+    <section id="advice-5">
+        <h3>Advice #5</h3>
+        <blockquote>Think global, install local, use <code>npx</code>.</blockquote>
+        <pre><code class="bash">
+    # scaffold a React app
+    npx create-react-app my-super-cool-app
+
+    # quickly configure a vue project
+    npx vue-cli init webpack my-super-cool-app
+        </code></pre>
+    </section>
+    <section id="dangerous-to-go-alone-again" data-background="img/dangerous-to-go-alone.png">
+        <pre class="fragment"><code class="bash">
+    npm install --global npx@latest
+        </code></pre>
+    </section>
+    <section id="write-and-review-code" data-background="img/npm-run-dev.png">
+        <span class="fragment" style="background-color:rgba(0,0,0,0.85);padding:20px 40px;border-radius:10px;">
+            <a href="https://github.com/jhwohlgemuth/voxelcss/blob/master/package.json#L67"><code>npm run dev</code></a>
+        </span>
+    </section>
+    <section id="build-code"></section>
+    <section id="test-code"></section>
+    <section id="deploy-code"></section>
+</section>
