@@ -35,8 +35,8 @@
 	<div class="slides">
 		<section id="title" data-markdown>
 			<script type="text/template">
-				## Developing *with* Node.js
-				#### Build, Scaffold, Test
+				## Node.js In Depth
+				#### Developing *with* Node.js
 				<br /> [by Jason Wohlgemuth](https://twitter.com/@jhwohlgemuth)
 			</script>
 		</section>
@@ -114,11 +114,6 @@
     vagrant suspend
         </code></pre>
     </section>
-    <section id="dangerous-to-go-alone" data-background="img/dangerous-to-go-alone.png">
-        <pre class="fragment"><code class="bash">
-    npm install --global --production windows-build-tools
-        </code></pre>
-    </section>
     <section id="after-node-is-installed">
         <h3>After Node is installed...</h3>
         <pre><code class="bash">
@@ -134,6 +129,11 @@
     npm install some-module
     npm install some-module --global
     npm install some-module --save-dev
+        </code></pre>
+    </section>
+    <section id="dangerous-to-go-alone" data-background="img/dangerous-to-go-alone.png">
+        <pre class="fragment"><code class="bash">
+    npm install --global --production windows-build-tools
         </code></pre>
     </section>
 </section>
@@ -168,6 +168,9 @@
 
     # quickly configure a vue project
     npx vue-cli init webpack my-super-cool-app
+
+    # what does the cow say?
+    npx cowsay moo
         </code></pre>
     </section>
     <section id="dangerous-to-go-alone-again" data-background="img/dangerous-to-go-alone.png">
@@ -175,14 +178,30 @@
     npm install --global npx@latest
         </code></pre>
     </section>
-    <section id="write-and-review-code" data-background="img/npm-run-dev.png">
+    <section id="write-review-build-and-test-code" data-background-video="img/write-review-build.mp4">
         <span class="fragment" style="background-color:rgba(0,0,0,0.85);padding:20px 40px;border-radius:10px;">
             <a href="https://github.com/jhwohlgemuth/voxelcss/blob/master/package.json#L67"><code>npm run dev</code></a>
         </span>
     </section>
-    <section id="build-code"></section>
-    <section id="test-code"></section>
-    <section id="deploy-code"></section>
+    <section id="deploy-code">
+        <h3>Deploy Node</h4>
+        <pre class="fragment"><code class="json">
+    {
+        "name": "my-super-cool-module",
+        "scripts": {
+            "preversion": "npm test",
+            "postversion": "git push && git push --tags"
+        }
+    }
+        </code></pre>
+        <pre class="fragment"><code class="bash">
+    # bump the version (patch, minor, major)
+    npm version minor
+
+    # publish to npm (private or public)
+    npm publish
+        </code></pre>
+    </section>
 </section>
 
 		<section id="references" data-background="img/web-surfing-time.gif">
@@ -193,7 +212,7 @@
 					<li><a href="https://github.com/nodejs/LTS">Node.js Foundation LTS Working Group</a></li>
 					<li><a href="https://node.cool/">node.cool</a></li>
 					<li><a href="https://kangax.github.io/compat-table/es6/">ES6 Compatibility Table</a></li>
-					<li><a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">Introducing npx</a></li>
+					<li><a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">Introducing npx (post on Medium)</a></li>
 				</ul>
 			</div>
 		</section>

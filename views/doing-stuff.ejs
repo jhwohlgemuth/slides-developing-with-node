@@ -28,6 +28,9 @@
 
     # quickly configure a vue project
     npx vue-cli init webpack my-super-cool-app
+
+    # what does the cow say?
+    npx cowsay moo
         </code></pre>
     </section>
     <section id="dangerous-to-go-alone-again" data-background="img/dangerous-to-go-alone.png">
@@ -35,12 +38,28 @@
     npm install --global npx@latest
         </code></pre>
     </section>
-    <section id="write-and-review-code" data-background="img/npm-run-dev.png">
+    <section id="write-review-build-and-test-code" data-background-video="img/write-review-build.mp4">
         <span class="fragment" style="background-color:rgba(0,0,0,0.85);padding:20px 40px;border-radius:10px;">
             <a href="https://github.com/jhwohlgemuth/voxelcss/blob/master/package.json#L67"><code>npm run dev</code></a>
         </span>
     </section>
-    <section id="build-code"></section>
-    <section id="test-code"></section>
-    <section id="deploy-code"></section>
+    <section id="deploy-code">
+        <h3>Deploy Node</h4>
+        <pre class="fragment"><code class="json">
+    {
+        "name": "my-super-cool-module",
+        "scripts": {
+            "preversion": "npm test",
+            "postversion": "git push && git push --tags"
+        }
+    }
+        </code></pre>
+        <pre class="fragment"><code class="bash">
+    # bump the version (patch, minor, major)
+    npm version minor
+
+    # publish to npm (private or public)
+    npm publish
+        </code></pre>
+    </section>
 </section>
