@@ -33,6 +33,21 @@
     npx cowsay moo
         </code></pre>
     </section>
+    <section id="using-npx">
+        <h3>Advice #5a</h3>
+        <blockquote>Think global, install local, use <code>npx</code>.</blockquote>
+        <pre><code class="bash">
+    # You cannot use local dependencies outside of npm script...
+    npm install jest
+    jest
+
+    # unless you install globally
+    npm install jest --global
+
+    # ...or use npx!
+    npx jest
+        </code></pre>
+    </section>
     <section id="dangerous-to-go-alone-again" data-background="img/dangerous-to-go-alone.png">
         <pre class="fragment"><code class="bash">
     npm install --global npx@latest
